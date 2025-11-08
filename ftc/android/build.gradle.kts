@@ -1,3 +1,8 @@
+plugins {
+    id("com.android.application") version "8.9.1" apply false // Or your specific Android Gradle Plugin version
+    id("com.google.gms.google-services") version "4.4.0" apply false // Or the latest version
+}
+
 allprojects {
     repositories {
         google()
@@ -10,6 +15,7 @@ val newBuildDir: Directory =
         .dir("../../build")
         .get()
 rootProject.layout.buildDirectory.value(newBuildDir)
+
 
 subprojects {
     val newSubprojectBuildDir: Directory = newBuildDir.dir(project.name)
